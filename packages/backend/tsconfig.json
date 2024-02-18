@@ -1,0 +1,5 @@
+// packages/backend/tsconfig.json
+{
+    "extends": "../../tsconfig.json",
+}
+  
