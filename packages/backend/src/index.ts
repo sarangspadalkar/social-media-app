@@ -1,4 +1,5 @@
 // src/index.ts
+import { log } from "@augment-vir/node-js";
 import express from "express";
 
 const app = express();
@@ -9,5 +10,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  log.success(`Server is running at http://localhost:${port}`);
 });
