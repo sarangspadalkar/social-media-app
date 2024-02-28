@@ -1,32 +1,10 @@
 {
   "compilerOptions": {
-    "alwaysStrict": true,
+    "composite": true,
     "declaration": true,
-    "esModuleInterop": true,
-    "exactOptionalPropertyTypes": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "noEmitOnError": false,
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUncheckedIndexedAccess": true,
-    "pretty": true,
-    "resolveJsonModule": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ES2021",
-    "useDefineForClassFields": true,
-    "useUnknownInCatchVariables": true
+    "emitDeclarationOnly": true,
+    "exactOptionalPropertyTypes": false,
+    "noEmit": false
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    },
-    "transpileOnly": true
-  }
+  "extends": "virmator/base-configs/tsconfig.base.json"
 }

@@ -1,9 +1,16 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"],
   "compilerOptions": {
-    "outDir": "./dist",
-    "exactOptionalPropertyTypes": false
-  }
+    "outDir": "ts.out",
+    "rootDir": "."
+  },
+  "exclude": [
+    "coverage",
+    "configs",
+    "public",
+    "cypress",
+    "file-tests",
+    "configs",
+    "ts.out"
+  ],
+  "extends": "../../tsconfig.json"
 }
