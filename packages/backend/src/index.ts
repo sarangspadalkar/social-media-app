@@ -1,14 +1,12 @@
-// src/index.ts
-import { log } from "@augment-vir/node-js";
-import express from "express";
+import { createYoga } from "graphql-yoga";
+import { createServer } from "node:http";
+import { schema } from "./schema";
 
-const app = express();
-const port = 3000;
+const port = Number(process.env.API_PORT) || 4000;
 
-app.get("/", (req, res) => {
-  res.send("Hello, TypeScript with Express!");
-});
+const yoga = createYoga({ schema });
+const server = createServer(yoga);
 
-app.listen(port, () => {
-  log.success(`Server is running at http://localhost:${port}`);
+server.listen(port, () => {
+  console.info("Server is running on http://localhost:4000/graphql");
 });

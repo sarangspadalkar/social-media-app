@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build": "npx prisma generate"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,16 @@
   },
   "dependencies": {
     "@augment-vir/node-js": "^23.3.4",
-    "express": "^4.18.2"
+    "@graphql-yoga/node": "^3.9.1",
+    "@pothos/core": "^3.41.0",
+    "@pothos/plugin-prisma": "^3.64.0",
+    "@prisma/client": "^5.10.2",
+    "express": "^4.18.2",
+    "graphql": "^16.8.1",
+    "graphql-scalars": "^1.22.5",
+    "prisma": "^5.10.2"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
