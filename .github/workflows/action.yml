@@ -1,4 +1,4 @@
-name: Lint Check
+name: Type Check
 
 on: [push, pull_request]
 
