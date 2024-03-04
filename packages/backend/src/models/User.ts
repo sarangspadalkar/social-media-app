@@ -12,7 +12,19 @@ builder.prismaObject("User", {
 builder.queryField("users", (t) =>
   t.prismaField({
     type: ["User"],
+    args: {
+      id: t.arg.int(),
+      name: t.arg.string({ required: true }),
+    },
     resolve: async (query, root, args, ctx, info) => {
+      if (args) {
+        return prisma.user.findMany({
+          where: {
+            id: args.id ? args.id : undefined,
+            name: args.name,
+          },
+        });
+      }
       return prisma.user.findMany({ ...query });
     },
   })
