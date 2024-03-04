@@ -1,6 +1,8 @@
+const { join } = require("path");
+
 module.exports = {
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "prettier"],
+  plugins: ["@typescript-eslint", "prettier", "import"],
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
@@ -12,7 +14,7 @@ module.exports = {
       ],
       parserOptions: {
         parser: "@typescript-eslint/parser",
-        project: "tsconfig.json",
+        project: [join(__dirname, "tsconfig.eslint.json")],
         sourceType: "module",
       },
     },
