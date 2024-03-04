@@ -3,7 +3,7 @@ name: Lint Check
 on: [push, pull_request]
 
 jobs:
-  lint:
+  type-check:
     runs-on: ubuntu-latest
 
     steps:
