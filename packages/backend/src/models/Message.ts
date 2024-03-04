@@ -5,7 +5,7 @@ builder.prismaObject("Message", {
     id: t.exposeInt("id"),
     body: t.exposeString("body"),
     createdAt: t.expose("createdAt", {
-      type: "Date",
+      type: "DateTime",
     }),
   }),
 });
