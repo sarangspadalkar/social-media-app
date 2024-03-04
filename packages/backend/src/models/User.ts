@@ -27,5 +27,5 @@ builder.queryField("users", (t) =>
       }
       return prisma.user.findMany({ ...query });
     },
-  })
+  }),
 );
