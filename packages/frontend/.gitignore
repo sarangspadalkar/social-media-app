@@ -1,23 +1,31 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
+*.tgz
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.not-committed/
+/Icon?
+coverage/
+dist-*/
+dist/
+generated-config-*
+graphics/
+node_modules/
+src/all-files-for-code-coverage.test.ts
+ts.out
+tsconfig.tsbuildinfo
 
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# dependencies
+# misc
+# production
+# testing
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.pnp.js
+/.pnp
+/build
+/coverage
+/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
