@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "type-check": "lerna run type-check"
+    "type-check": "lerna run type-check",
+    "start": "concurrently --kill-others -n backend,frontend -c auto \"lerna run start --scope=backend\" \"lerna run start --scope=frontend\""
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
+    "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
