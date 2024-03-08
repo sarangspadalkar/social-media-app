@@ -9,6 +9,11 @@ export default defineConfig(
   (baseConfig) => {
     return {
       ...baseConfig,
+      server: {
+        ...baseConfig.server,
+        port: 9000,
+        open: true,
+      },
     };
   },
 );
