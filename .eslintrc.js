@@ -17,6 +17,9 @@ module.exports = {
         project: [join(__dirname, "tsconfig.eslint.json")],
         sourceType: "module",
       },
+      rules: {
+        "import/prefer-default-export": "off",
+      },
     },
   ],
 };

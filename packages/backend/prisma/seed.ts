@@ -1,4 +1,6 @@
+import { log } from "@augment-vir/node-js";
 import { PrismaClient } from "@prisma/client";
+
 const prisma = new PrismaClient();
 
 async function main() {
@@ -74,5 +76,5 @@ async function main() {
 }
 
 main().then(() => {
-  console.log("Data seeded...");
+  log.success("Data seeded...");
 });
