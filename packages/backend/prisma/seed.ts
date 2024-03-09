@@ -1,7 +1,5 @@
 import { log } from "@augment-vir/node-js";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "../src/db";
 
 async function main() {
   await prisma.message.deleteMany({});
@@ -73,8 +71,8 @@ async function main() {
       },
     },
   });
+
+  log.success("Data seeded...");
 }
 
-main().then(() => {
-  log.success("Data seeded...");
-});
+main();

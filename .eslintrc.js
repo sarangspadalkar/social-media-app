@@ -5,20 +5,34 @@ module.exports = {
   plugins: ["@typescript-eslint", "prettier", "import"],
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
+      files: ["*.ts"],
+      env: {
+        browser: true,
+        node: true,
+      },
       extends: [
         "airbnb-base",
-        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:import/typescript",
+        "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:sonarjs/recommended",
         "prettier",
       ],
+      parser: "@typescript-eslint/parser",
       parserOptions: {
         parser: "@typescript-eslint/parser",
-        project: [join(__dirname, "tsconfig.eslint.json")],
-        sourceType: "module",
+        project: ["tsconfig.eslint.json"],
       },
       rules: {
         "import/prefer-default-export": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            ts: "never",
+          },
+        ],
       },
     },
   ],
