@@ -21,13 +21,42 @@ model User {
   id        Int       @id @default(autoincrement())
   name      String
   createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now())
+  userName  String    @default("")
+  email     String    @default("")
+  password  String    @default("")
+  posts     Post[]
   messages  Message[]
+  comments  Comment[]
+}
+
+model Post {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  author    User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now())
+  likes     Int       @default(0)
+  body      String    @default("")
+  comments  Comment[]
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  body      String   @default("")
+  post      Post     @relation(fields: [postId], references: [id])
+  author    User     @relation(fields: [userId], references: [id])
+  postId    Int
+  userId    Int
 }
 
 model Message {
   id        Int      @id @default(autoincrement())
-  body      String
+  body      String   @default("")
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
   userId    Int
-  user      User     @relation(fields: [userId], references: [id])
+  author    User     @relation(fields: [userId], references: [id])
 }
