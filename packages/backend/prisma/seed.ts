@@ -8,6 +8,8 @@ async function main() {
   await prisma.user.create({
     data: {
       name: "Jack",
+      userName: "comuhwe@example.com",
+      password: "TRwc9NR1c8Sk",
       messages: {
         create: [
           {
@@ -18,12 +20,23 @@ async function main() {
           },
         ],
       },
+      posts: {
+        createMany: {
+          data: [
+            {
+              likes: 10,
+            },
+          ],
+        },
+      },
     },
   });
 
   await prisma.user.create({
     data: {
       name: "Ryan",
+      userName: "vija@example.com",
+      password: "sas5isVQUV7vM",
       messages: {
         create: [
           {
@@ -40,6 +53,8 @@ async function main() {
   await prisma.user.create({
     data: {
       name: "Adam",
+      userName: "uswp@example.com",
+      password: "UrKCJ6MWUJDnT",
       messages: {
         create: [
           {
