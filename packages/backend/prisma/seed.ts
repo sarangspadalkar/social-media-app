@@ -10,6 +10,7 @@ async function main() {
       name: "Jack",
       userName: "comuhwe@example.com",
       password: "TRwc9NR1c8Sk",
+      email: "comuhwe@example.com",
       messages: {
         create: [
           {
@@ -25,6 +26,7 @@ async function main() {
           data: [
             {
               likes: 10,
+              body: "Incididunt pariatur elit excepteur non elit sit tempor mollit est laborum qui ex magna esse. Aute dolor et ipsum eiusmod deserunt cillum. Magna tempor pariatur cillum sit amet ad non adipisicing do exercitation.\n\tIrure dolore esse consequat culpa. Ea aliquip dolore duis minim nisi qui consectetur deserunt. Veniam occaecat proident officia consequat laboris in cupidatat irure ad Lorem excepteur laboris fugiat. Reprehenderit eu nostrud officia sunt cillum deserunt esse reprehenderit veniam labore est sint non in. Officia irure reprehenderit ut laboris pariatur exercitation aliqua labore laborum nisi esse. Eu proident adipisicing excepteur dolor incididunt deserunt eiusmod sint nisi minim. \n\tEiusmod ut commodo ex dolor tempor nisi laboris id elit nisi qui. Reprehenderit et sint Lorem aliqua elit aute incididunt proident voluptate officia deserunt officia. Nisi commodo cupidatat anim irure enim sint nulla.",
             },
           ],
         },
@@ -37,6 +39,7 @@ async function main() {
       name: "Ryan",
       userName: "vija@example.com",
       password: "sas5isVQUV7vM",
+      email: "vija@example.com",
       messages: {
         create: [
           {
@@ -55,6 +58,7 @@ async function main() {
       name: "Adam",
       userName: "uswp@example.com",
       password: "UrKCJ6MWUJDnT",
+      email: "uswp@example.com",
       messages: {
         create: [
           {
