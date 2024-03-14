@@ -9,6 +9,10 @@ runs:
       with:
         node-version-file: ".nvmrc"
 
+    - name: Delete node_modules
+      run: find . -type d -name node_modules -prune -exec rm -rf "{}" \;
+      shell: bash
+
     - name: Install Dependencies
       run: npm ci
       shell: bash
