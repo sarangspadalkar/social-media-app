@@ -14,6 +14,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
+      - name: Delete esbuild stuff
+        run: rmdir '${{ github.workspace}}/node_modules/esbuild/bin']
+
       - name: Install Dependencies
         run: npm install
 
@@ -34,6 +37,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+
+      - name: Delete esbuild stuff
+        run: rmdir '${{ github.workspace}}/node_modules/esbuild/bin']
 
       - name: Install Dependencies
         run: npm install
