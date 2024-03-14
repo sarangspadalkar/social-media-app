@@ -15,7 +15,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Delete esbuild stuff
-        run: rmdir '${{ github.workspace}}/node_modules/esbuild/bin']
+        run: rmdir '${{ github.workspace}}/node_modules/esbuild/bin'
 
       - name: Install Dependencies
         run: npm install
@@ -39,7 +39,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Delete esbuild stuff
-        run: rmdir '${{ github.workspace}}/node_modules/esbuild/bin']
+        run: rmdir '${{ github.workspace}}/node_modules/esbuild/bin'
 
       - name: Install Dependencies
         run: npm install
