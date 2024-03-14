@@ -5,23 +5,25 @@ on: [push, pull_request]
 jobs:
   type-check:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
+      - name: Setup Runner
+        uses: "./.github/actions/ci-setup"
 
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Generate Prisma Types
-        run: lerna run prisma:generate-types  --scope=backend
-
-      # - name: Run Lint Check
-      #   run: npm run lint
       - name: Run Type Check
         run: npm run type-check
+
+  lint-check:
+    needs: type-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Runner
+        uses: "./.github/actions/ci-setup"
+
+      - name: Run Linter
+        run: npm run lint

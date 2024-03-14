@@ -1,0 +1,16 @@
+name: CI Setup
+description: "Shared NPM setup for CI jobs"
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: ".nvmrc"
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Generate Prisma Types
+      run: lerna run prisma:generate-types  --scope=backend
