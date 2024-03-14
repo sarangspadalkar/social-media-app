@@ -1,4 +1,4 @@
-name: Type Check
+name: CI Checks
 
 on: [push, pull_request]
 
@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Runner
-        uses: "./.github/actions/ci-setup"
+        uses: ".github/actions/ci-setup"
 
       - name: Run Type Check
         run: npm run type-check
@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Runner
-        uses: "./.github/actions/ci-setup"
+        uses: ".github/actions/ci-setup"
 
       - name: Run Linter
         run: npm run lint

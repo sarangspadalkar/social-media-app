@@ -1,5 +1,5 @@
 name: CI Setup
-description: "Shared NPM setup for CI jobs"
+description: "Shared setup for CI jobs"
 
 runs:
   using: composite
