@@ -1,6 +1,6 @@
 import { builder } from "../builder";
 
-builder.prismaObject("Message", {
+builder.prismaObject("Comment", {
   fields: (t) => ({
     id: t.exposeInt("id"),
     body: t.exposeString("body"),
