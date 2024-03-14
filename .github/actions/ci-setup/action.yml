@@ -10,7 +10,7 @@ runs:
         node-version-file: ".nvmrc"
 
     - name: Delete node_modules
-      run: find . -type d -name node_modules -prune -exec rm -rf "{}" \;
+      run: rm -rf ${{ github.workspace }}/**/node_modules
       shell: bash
 
     - name: Install Dependencies
