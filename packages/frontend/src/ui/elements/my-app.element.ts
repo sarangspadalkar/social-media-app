@@ -1,7 +1,7 @@
-import { css, defineElementNoInputs, html } from "element-vir";
+import { css, defineElementNoInputs, html } from 'element-vir';
 
 export const MyApp = defineElementNoInputs({
-  tagName: "my-app",
+  tagName: 'my-app',
   styles: css`
     :host {
       display: flex;
@@ -11,5 +11,5 @@ export const MyApp = defineElementNoInputs({
   `,
   renderCallback() {
     return html` <span>Hello there!</span> `;
-  },
+  }
 });

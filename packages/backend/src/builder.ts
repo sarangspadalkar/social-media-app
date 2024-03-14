@@ -1,8 +1,8 @@
-import SchemaBuilder from "@pothos/core";
-import PrismaPlugin from "@pothos/plugin-prisma";
-import type PrismaTypes from "@pothos/plugin-prisma/generated";
-import { DateTimeISOResolver, EmailAddressResolver } from "graphql-scalars";
-import { prisma } from "./db";
+import SchemaBuilder from '@pothos/core';
+import PrismaPlugin from '@pothos/plugin-prisma';
+import type PrismaTypes from '@pothos/plugin-prisma/generated';
+import { DateTimeISOResolver, EmailAddressResolver } from 'graphql-scalars';
+import { prisma } from './db';
 
 export const builder = new SchemaBuilder<{
   Scalars: {
@@ -13,13 +13,14 @@ export const builder = new SchemaBuilder<{
 }>({
   plugins: [PrismaPlugin],
   prisma: {
-    client: prisma,
-  },
+    client: prisma
+  }
 });
 
-builder.addScalarType("Date", DateTimeISOResolver, {});
+builder.addScalarType('Date', DateTimeISOResolver, {});
+
 export const emailScalar = builder.addScalarType(
-  "Email",
+  'Email',
   EmailAddressResolver,
   {}
 );
