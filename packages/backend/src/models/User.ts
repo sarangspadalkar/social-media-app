@@ -26,7 +26,7 @@ builder.queryField("users", (t) =>
         required: true,
       }),
     },
-    resolve: async (query, root, args, ctx, info) => {
+    resolve: async (query, _root, args, _ctx, _info) => {
       if (args) {
         return prisma.user.findMany({
           where: {
@@ -38,5 +38,5 @@ builder.queryField("users", (t) =>
       }
       return prisma.user.findMany({ ...query });
     },
-  }),
+  })
 );

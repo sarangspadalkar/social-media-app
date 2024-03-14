@@ -1,7 +1,7 @@
 import { log } from "@augment-vir/node-js";
 import { prisma } from "../src/db";
 
-async function main() {
+await (async function main() {
   await prisma.message.deleteMany({});
   await prisma.user.deleteMany({});
 
@@ -73,6 +73,4 @@ async function main() {
   });
 
   log.success("Data seeded...");
-}
-
-main();
+})();
