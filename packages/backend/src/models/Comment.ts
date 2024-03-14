@@ -1,11 +1,11 @@
-import { builder } from "../builder";
+import { builder } from '../builder';
 
-builder.prismaObject("Comment", {
+builder.prismaObject('Comment', {
   fields: (t) => ({
-    id: t.exposeInt("id"),
-    body: t.exposeString("body"),
-    createdAt: t.expose("createdAt", {
-      type: "Date",
-    }),
-  }),
+    id: t.exposeInt('id'),
+    body: t.exposeString('body'),
+    createdAt: t.expose('createdAt', {
+      type: 'Date'
+    })
+  })
 });

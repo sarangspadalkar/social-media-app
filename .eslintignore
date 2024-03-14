@@ -1,0 +1,6 @@
+.eslintignore
+.eslintrc.js
+dist/
+ts.out/
+package-lock.json
+configs/

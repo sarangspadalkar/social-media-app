@@ -1,11 +1,10 @@
-name: Type Check
+name: CI Checks
 
 on: [push, pull_request]
 
 jobs:
   type-check:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -13,15 +12,34 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Generate Prisma Types
         run: lerna run prisma:generate-types  --scope=backend
 
-      # - name: Run Lint Check
-      #   run: npm run lint
       - name: Run Type Check
         run: npm run type-check
+
+  lint-check:
+    needs: type-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Generate Prisma Types
+        run: lerna run prisma:generate-types  --scope=backend
+
+      - name: Run Linter
+        run: npm run lint
